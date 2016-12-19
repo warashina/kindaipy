@@ -8,6 +8,7 @@ setup(
     name = 'kindaipy',
     version = '0.0.1',
     description='This is test codes for travis ci',
-    url = 'https://github.com/warashina/kindaipy'
-    packages = find_packages(),
+    url = 'https://github.com/warashina/kindaipy',
+    packages = ["kindaipy"],
+    package_dir={'kindaipy':'kindaipy'},
 )
