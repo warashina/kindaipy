@@ -1,3 +1,5 @@
+"""Kindai.py: Downloader for Japanese NDL Digital Collections."""
+
 from setuptools import setup
 import sys
 

@@ -9,7 +9,6 @@ class TestUtil(unittest.TestCase):
 
     def test_expand_params(self):
         """パラメーターをURLエンコードする.OrderdDictで順序を保持する."""
-
         params = OrderedDict([
             ('itemId',      'info:ndljp/pid/922693'),
             ('contentNo',   '5'),
