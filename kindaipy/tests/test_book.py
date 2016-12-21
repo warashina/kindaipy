@@ -1,6 +1,7 @@
 import unittest
 from kindaipy.book import Book
 
+
 class TestBook(unittest.TestCase):
 
     def setUp(self):
@@ -10,7 +11,8 @@ class TestBook(unittest.TestCase):
         self.assertTrue(hasattr(self.book, 'permalink'))
 
     def test_book_has_correct_permalink(self):
-        self.assertEqual(self.book.permalink, 'http://kindai.ndl.go.jp/info:ndljp/pid/922693')
+        self.assertEqual(self.book.permalink,
+                         'http://kindai.ndl.go.jp/info:ndljp/pid/922693')
 
     def test_book_has_key(self):
         self.assertTrue(hasattr(self.book, 'key'))
