@@ -1,6 +1,6 @@
-import unittest
-from kindaipy.spread import Spread
 from kindaipy.book import Book
+from kindaipy.spread import Spread
+import unittest
 
 
 class TestSpread(unittest.TestCase):
@@ -25,10 +25,10 @@ class TestSpread(unittest.TestCase):
                          'http://dl.ndl.go.jp/info:ndljp/pid/922693/5')
 
     def test_spread_image_uri(self):
-        self.assertEqual(
-          self.spread.image_url(),
-          ('http://dl.ndl.go.jp/view/jpegOutput?'
-           'itemId=info%3Andljp%2Fpid%2F922693&contentNo=5&outputScale=1'))
+        self.assertEqual(self.spread.image_url(),
+                         ('http://dl.ndl.go.jp/view/jpegOutput?'
+                          'itemId=info%3Andljp%2Fpid%2F922693'
+                          '&contentNo=5&outputScale=1'))
 
 
 if __name__ == '__main__':

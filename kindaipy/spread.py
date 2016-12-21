@@ -1,8 +1,8 @@
-import kindaipy.util as util
 from collections import OrderedDict
+import kindaipy.util as util
 
 
-class Spread():
+class Spread(object):
     def __init__(self, book, spread_number):
         self.book = book
         self.spread_number = spread_number
@@ -13,5 +13,6 @@ class Spread():
             ('contentNo',   str(self.spread_number)),
             ('outputScale', '1'),
         ])
-        return 'http://dl.ndl.go.jp/view/jpegOutput?{0}'.format(
-          util.expand_params(params))
+        image_url = 'http://dl.ndl.go.jp/view/jpegOutput?{0}'.format(
+                    util.expand_params(params))
+        return image_url

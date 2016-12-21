@@ -1,6 +1,6 @@
-import unittest
-import kindaipy.util as util
 from collections import OrderedDict
+import kindaipy.util as util
+import unittest
 
 
 class TestUtil(unittest.TestCase):
@@ -12,9 +12,9 @@ class TestUtil(unittest.TestCase):
             ('outputScale', '1'),
         ])
         encoded_params = util.expand_params(params)
-        self.assertEqual(
-          encoded_params,
-          'itemId=info%3Andljp%2Fpid%2F922693&contentNo=5&outputScale=1')
+        self.assertEqual(encoded_params,
+                         ('itemId=info%3Andljp%2Fpid%2F922693&'
+                          'contentNo=5&outputScale=1'))
 
 if __name__ == '__main__':
     unittest.main()

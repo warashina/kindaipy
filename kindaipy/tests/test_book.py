@@ -1,5 +1,5 @@
-import unittest
 from kindaipy.book import Book
+import unittest
 
 
 class TestBook(unittest.TestCase):
