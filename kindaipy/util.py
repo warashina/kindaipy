@@ -2,6 +2,8 @@
 
 URLの文字列処理などを実装する.
 """
+from bs4 import BeautifulSoup
+import requests
 from urllib.parse import urlencode
 
 
@@ -11,3 +13,8 @@ def expand_params(params):
     OrderedDictを引数にすることで期待通りの順番のURLパラメータが返る.
     """
     return urlencode(params)
+
+def get_permalink_page(url):
+    """Get webpage with bs4."""
+    r = requests.get(url)
+    return BeautifulSoup(r.text)
