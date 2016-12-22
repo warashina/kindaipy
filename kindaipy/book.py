@@ -3,7 +3,7 @@
 Initalize with permalink
 ユニークなpermalinkを持つ資料のモジュール
 """
-
+import kindaipy.util as util
 
 class Book(object):
     """Bookオブジェクトは国会図書館デジタルライブラリーの個別資料を表す.
@@ -15,4 +15,5 @@ class Book(object):
         """permalinkで初期化する."""
         self.permalink = permalink
         self.key = ''
+        self.permalink_page = util.get_permalink_page(permalink)
         self.title = ''

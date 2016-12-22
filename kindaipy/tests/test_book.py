@@ -1,4 +1,5 @@
 """Tests for Book object."""
+from bs4 import BeautifulSoup
 from kindaipy.book import Book
 import unittest
 
@@ -36,6 +37,14 @@ class TestBook(unittest.TestCase):
     def test_book_got_title_content(self):
         """資料のtitleをもつこと.スクレイピングで取得する."""
         self.assertEqual(self.book.title, '正義の叫')
+
+    def test_book_has_permalink_page(self):
+        """permalink_pageはURLではなくWebページのオブジェクト."""
+        self.assertTrue(hasattr(self.book, 'permalink_page'))
+
+    def test_book_has_permalink_page_as_bs_object(self):
+        """permalink_pageはBeautifulSoupオブジェクトとしてもつこと."""
+        self.assertIsInstance(self.book.permalink_page, BeautifulSoup)
 
 
 if __name__ == '__main__':
