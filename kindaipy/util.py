@@ -18,7 +18,7 @@ def expand_params(params):
 def get_permalink_page(url):
     """Get webpage with bs4."""
     r = requests.get(url)
-    return BeautifulSoup(r.text)
+    return BeautifulSoup(r.text, "html.parser")
 
 def get_key(url):
     m = re.search("\d+$", url)
