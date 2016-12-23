@@ -24,7 +24,6 @@ class TestBook(unittest.TestCase):
         """資料keyを属性としてもつこと."""
         self.assertTrue(hasattr(self.book, 'key'))
 
-    @unittest.skip("Not implemented.")
     def test_book_got_key_content(self):
         """keyはURL最後の番号であること."""
         self.assertEqual(self.book.key, '922693')

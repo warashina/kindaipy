@@ -14,6 +14,6 @@ class Book(object):
     def __init__(self, permalink):
         """permalinkで初期化する."""
         self.permalink = permalink
-        self.key = ''
         self.permalink_page = util.get_permalink_page(permalink)
+        self.key = util.get_key(permalink)
         self.title = ''

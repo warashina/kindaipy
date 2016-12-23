@@ -3,6 +3,7 @@
 URLの文字列処理などを実装する.
 """
 from bs4 import BeautifulSoup
+import re
 import requests
 from urllib.parse import urlencode
 
@@ -18,3 +19,7 @@ def get_permalink_page(url):
     """Get webpage with bs4."""
     r = requests.get(url)
     return BeautifulSoup(r.text)
+
+def get_key(url):
+    m = re.search("\d+$", url)
+    return m.group(0)
