@@ -24,7 +24,6 @@ class TestBook(unittest.TestCase):
         """資料keyを属性としてもつこと."""
         self.assertTrue(hasattr(self.book, 'key'))
 
-    @unittest.skip("Not implemented.")
     def test_book_got_key_content(self):
         """keyはURL最後の番号であること."""
         self.assertEqual(self.book.key, '922693')
@@ -33,7 +32,6 @@ class TestBook(unittest.TestCase):
         """資料の題名となるtitle属性をもつこと."""
         self.assertTrue(hasattr(self.book, 'title'))
 
-    @unittest.skip("Not implemented.")
     def test_book_got_title_content(self):
         """資料のtitleをもつこと.スクレイピングで取得する."""
         self.assertEqual(self.book.title, '正義の叫')
@@ -45,6 +43,15 @@ class TestBook(unittest.TestCase):
     def test_book_has_permalink_page_as_bs_object(self):
         """permalink_pageはBeautifulSoupオブジェクトとしてもつこと."""
         self.assertIsInstance(self.book.permalink_page, BeautifulSoup)
+
+    def test_get_metadata(self):
+        self.assertIsInstance(self.book.metadata, dict)
+
+    def test_book_has_metadata(self):
+        self.assertTrue(hasattr(self.book, 'metadata'))
+
+    def test_lookup_from_metadata_from_query(self):
+        self.assertEqual(self.book.metadata_like('title'), '正義の叫')
 
 
 if __name__ == '__main__':
