@@ -53,6 +53,27 @@ class TestBook(unittest.TestCase):
     def test_lookup_from_metadata_from_query(self):
         self.assertEqual(self.book.metadata_like('title'), '正義の叫')
 
+    def test_book_has_total_spread(self):
+        self.assertTrue(hasattr(self.book, 'total_spread'))
+
+    def test_book_has_number_of_total_spread(self):
+        self.assertEqual(self.book.total_spread, 20)
+
+    def test_book_has_spreads(self):
+        self.assertTrue(hasattr(self.book, 'spreads'))
+
+    def test_book_has_correct_number_of_spreads(self):
+        self.assertEqual(len(self.book.spreads), 20)
+
+    def test_book_has_spreads_with_image_url(self):
+        self.assertEqual(self.book.spreads[0].image_url,
+                         ('http://dl.ndl.go.jp/view/jpegOutput?'
+                          'itemId=info%3Andljp%2Fpid%2F922693'
+                          '&contentNo=1&outputScale=1'))
+
+    def test_book_has_spread_at(self):
+        self.assertTrue(hasattr(self.book, 'spread_at'))
+
 
 if __name__ == '__main__':
     unittest.main()
