@@ -53,6 +53,15 @@ class TestBook(unittest.TestCase):
     def test_lookup_from_metadata_from_query(self):
         self.assertEqual(self.book.metadata_like('title'), '正義の叫')
 
+    def test_book_has_total_spread(self):
+        self.assertTrue(hasattr(self.book, 'total_spread'))
+
+    def test_book_has_number_of_total_spread(self):
+        self.assertEqual(self.book.total_spread, 20)
+
+    def test_book_has_spreads(self):
+        self.assertTrue(hasattr(self.book, 'spreads'))
+
 
 if __name__ == '__main__':
     unittest.main()

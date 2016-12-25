@@ -19,6 +19,8 @@ class Book(object):
         self.metadata = self.get_metadata()
         self.key = util.get_key(permalink)
         self.title = self.metadata_like('title')
+        self.total_spread = self.get_total_spread()
+        self.spreads = []
 
     def get_metadata(self):
         dts = self.permalink_page.select('dl.detail-metadata-list dt')
@@ -35,3 +37,7 @@ class Book(object):
             m = re.search(query_regexp ,key)
             if m != None:
                 return value
+
+    def get_total_spread(self):
+        page_menu = self.permalink_page.select('#sel-content-no option')
+        return len(page_menu)
