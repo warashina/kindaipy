@@ -11,10 +11,11 @@ class Spread(object):
 
     def __init__(self, book, spread_number):
         """Bookのインスタンスとページ番号で初期化する."""
-        self.book = book
+        self.book =          book
         self.spread_number = spread_number
+        self.image_url =     self.get_image_url()
 
-    def image_url(self) -> str:
+    def get_image_url(self) -> str:
         """資料keyとページNoをパラメーターに画像のURLを作成する."""
         params = OrderedDict([
             ('itemId',      'info:ndljp/pid/{0}'.format(str(self.book.key))),

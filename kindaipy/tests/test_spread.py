@@ -9,7 +9,7 @@ class TestSpread(unittest.TestCase):
 
     def setUp(self):
         """Bookのインスタンスとページ番号で初期化する."""
-        self.book = Book('http://kindai.ndl.go.jp/info:ndljp/pid/922693')
+        self.book = Book('http://dl.ndl.go.jp/info:ndljp/pid/922693')
         self.book.key = '922693'
         self.spread_number = '5'
         self.spread = Spread(self.book, self.spread_number)
@@ -22,7 +22,7 @@ class TestSpread(unittest.TestCase):
         """bookのpermalinkを読めること."""
         self.assertEqual(
             self.spread.book.permalink,
-            'http://kindai.ndl.go.jp/info:ndljp/pid/922693')
+            'http://dl.ndl.go.jp/info:ndljp/pid/922693')
 
     @unittest.skip("Not implemented.")
     def test_spread_uri(self):
@@ -32,7 +32,7 @@ class TestSpread(unittest.TestCase):
 
     def test_spread_image_uri(self):
         """資料画像ダウンロードのための正しいURLが得られること."""
-        self.assertEqual(self.spread.image_url(),
+        self.assertEqual(self.spread.image_url,
                          ('http://dl.ndl.go.jp/view/jpegOutput?'
                           'itemId=info%3Andljp%2Fpid%2F922693'
                           '&contentNo=5&outputScale=1'))
